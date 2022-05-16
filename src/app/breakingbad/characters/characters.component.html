@@ -1,0 +1,12 @@
+<div>
+  <h1>Breaking Bad</h1>
+  <mat-grid-list cols="5" rowHeight="2:3" gutterSize="50">
+    <mat-grid-tile class="grid-item" *ngFor="let character of characters"
+      >
+      <app-character-block [style.backgroundImage]="'linear-gradient(180deg, rgba(29, 29, 29, 0) 0%, rgba(29, 29, 29, 0.8) 80.79%),url('+ character?.img +')'" [character]='character'></app-character-block>
+    </mat-grid-tile>
+  </mat-grid-list>
+  <mat-paginator #paginator [length]="totaLength" [pageSize]="pageSize" aria-label="Select page"
+    [pageIndex]="currentPage" (page)="handlePage($event)">
+  </mat-paginator>
+</div>

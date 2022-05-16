@@ -1,0 +1,16 @@
+
+<form action="" >
+  <mat-form-field appearance="fill">
+    <mat-label>
+      Enter name
+    </mat-label>
+    <input matInput placeholder="Enter name"  [(ngModel)]="name" name="name">
+  </mat-form-field>
+  <button (click)="onButtonClick()">Click</button>
+</form>
+
+
+<ul>
+  <li *ngFor="let character of characters; let i = index" >
+    <span [ngStyle]="{color: getCharactersColor(character)}"> {{character.name}} {{i}}</span></li>
+</ul>
